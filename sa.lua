@@ -1307,9 +1307,9 @@ end
 --------------------------------------------------------------------------------------------------------------
  if Chat_Type == 'GroupBot' then
 if ChekAdd(msg.chat_id_) == true then
-if text == "قفل الدردشه" and msg.reply_to_message_id_ == 0 and Owner(msg) then 
+if text == "قفل الدردشة" and msg.reply_to_message_id_ == 0 and Owner(msg) then 
 database:set(bot_id.."sa:Lock:text"..msg.chat_id_,true) 
-Reply_Status(msg,msg.sender_user_id_,"lock","⌔ ⍒ تم قفـل الدردشه")  
+Reply_Status(msg,msg.sender_user_id_,"lock","⌔ ⍒ تم قفـل الدردشة")  
 return false
 end 
 if text == "قفل الاضافه" and msg.reply_to_message_id_ == 0 and Addictive(msg) then 
@@ -1396,7 +1396,7 @@ database:del(bot_id.."sa:Lock:AddMempar"..msg.chat_id_)
 Reply_Status(msg,msg.sender_user_id_,"unlock","⌔ ⍒ تم فـتح اضافة الاعضاء")  
 return false
 end 
-if text == "فتح الدردشه" and msg.reply_to_message_id_ == 0 and Owner(msg) then  
+if text == "فتح الدردشة" and msg.reply_to_message_id_ == 0 and Owner(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
@@ -6407,7 +6407,7 @@ local text =
 "\n".."⌔ ⍒ الاغاني ›› "..lock_vico..
 "\n".."⌔ ⍒ المتحركة ›› "..lock_gif..
 "\n".."⌔ ⍒ الملفات ›› "..lock_file..
-"\n".."⌔ ⍒ الدردشه ›› "..lock_text..
+"\n".."⌔ ⍒ الدردشة ›› "..lock_text..
 "\n".."⌔ ⍒ الفيديو ›› "..lock_ved..
 "\n".."⌔ ⍒ الصور ›› "..lock_photo..
 "\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ "..
@@ -8035,7 +8035,7 @@ Text = [[
 ⌔ ⍒ الملصقات
 ⌔ ⍒ الفيديو
 ⌔ ⍒ الانلاين
-⌔ ⍒ الدردشه
+⌔ ⍒ الدردشة
 ⌔ ⍒ التوجيه
 ⌔ ⍒ الاغاني
 ⌔ ⍒ الصوت
