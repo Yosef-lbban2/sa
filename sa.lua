@@ -4159,7 +4159,7 @@ return false
 end
 tdcli_function ({ID = "PinChannelMessage",channel_id_ = msg.chat_id_:gsub("-100",""),message_id_ = msg.reply_to_message_id_,disable_notification_ = 1},function(arg,data) 
 if data.ID == "Ok" then
-send(msg.chat_id_, msg.id_,"⌔ ⍒ تم تثبيت الرساله")   
+send(msg.chat_id_, msg.id_,"⌔ ⍒ تم تثبيت الرسالة")   
 database:set(bot_id.."sa:Pin:Id:Msg"..msg.chat_id_,msg.reply_to_message_id_)
 elseif data.code_ == 6 then
 send(msg.chat_id_,msg.id_,"⌔ ⍒ انا لست ادمن هنا يرجى ترقيتي ادمن ثم اعد المحاوله")  
@@ -4184,7 +4184,7 @@ return false
 end
 tdcli_function({ID="UnpinChannelMessage",channel_id_ = msg.chat_id_:gsub("-100","")},function(arg,data) 
 if data.ID == "Ok" then
-send(msg.chat_id_, msg.id_,"⌔ ⍒ تم الغاء تثبيت الرساله")   
+send(msg.chat_id_, msg.id_,"⌔ ⍒ تم الغاء تثبيت الرسالة")   
 database:del(bot_id.."sa:Pin:Id:Msg"..msg.chat_id_)
 elseif data.code_ == 6 then
 send(msg.chat_id_,msg.id_,"⌔ ⍒ انا لست ادمن هنا يرجى ترقيتي ادمن ثم اعد المحاوله")  
@@ -5086,7 +5086,7 @@ db = "بصمه 📢"
 elseif database:get(bot_id.."sa:Add:Rd:Manager:Stekrs"..v..msg.chat_id_) then
 db = "ملصق 🎞️"
 elseif database:get(bot_id.."sa:Add:Rd:Manager:Text"..v..msg.chat_id_) then
-db = "رساله 📩"
+db = "رسالة 📩"
 elseif database:get(bot_id.."sa:Add:Rd:Manager:Photo"..v..msg.chat_id_) then
 db = "صورة 🌄"
 elseif database:get(bot_id.."sa:Add:Rd:Manager:Video"..v..msg.chat_id_) then
@@ -5294,7 +5294,7 @@ db = "بصمه 📢"
 elseif database:get(bot_id.."sa:Add:Rd:Sudo:stekr"..v) then
 db = "ملصق 🎞️"
 elseif database:get(bot_id.."sa:Add:Rd:Sudo:Text"..v) then
-db = "رساله 📩"
+db = "رسالة 📩"
 elseif database:get(bot_id.."sa:Add:Rd:Sudo:Photo"..v) then
 db = "صورة 🌄"
 elseif database:get(bot_id.."sa:Add:Rd:Sudo:Video"..v) then
@@ -6045,7 +6045,7 @@ send(msg.chat_id_, msg.id_,"⌔ ⍒ الاذاعه معطله من قبل الم
 return false
 end
 database:setex(bot_id.."sa:sa:Bc:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
-send(msg.chat_id_, msg.id_,"⌔ ⍒ ارسل لي سواء ~ { ملصق, متحركة, صورة, رساله }\n⌔ ⍒ للخروج ارسل الغاء ") 
+send(msg.chat_id_, msg.id_,"⌔ ⍒ ارسل لي سواء ~ { ملصق, متحركة, صورة, رسالة }\n⌔ ⍒ للخروج ارسل الغاء ") 
 return false
 end 
 if text=="اذاعه" and msg.reply_to_message_id_ == 0 and DevBot(msg) then 
@@ -6054,7 +6054,7 @@ send(msg.chat_id_, msg.id_,"⌔ ⍒ الاذاعه معطله من قبل الم
 return false
 end
 database:setex(bot_id.."sa:sa:Bc:Grops" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
-send(msg.chat_id_, msg.id_,"⌔ ⍒ ارسل لي سواء ~ { ملصق, متحركة, صورة, رساله }\n⌔ ⍒ للخروج ارسل الغاء ") 
+send(msg.chat_id_, msg.id_,"⌔ ⍒ ارسل لي سواء ~ { ملصق, متحركة, صورة, رسالة }\n⌔ ⍒ للخروج ارسل الغاء ") 
 return false
 end  
 if text=="اذاعه بالتثبيت" and msg.reply_to_message_id_ == 0 and DevBot(msg) then 
@@ -6063,7 +6063,7 @@ send(msg.chat_id_, msg.id_,"⌔ ⍒ الاذاعه معطله من قبل الم
 return false
 end
 database:setex(bot_id.."sa:sa:Bc:Grops:Pin" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
-send(msg.chat_id_, msg.id_,"⌔ ⍒ ارسل لي سواء ~ { ملصق, متحركة, صورة, رساله }\n⌔ ⍒ للخروج ارسل الغاء ") 
+send(msg.chat_id_, msg.id_,"⌔ ⍒ ارسل لي سواء ~ { ملصق, متحركة, صورة, رسالة }\n⌔ ⍒ للخروج ارسل الغاء ") 
 return false
 end  
 if text=="اذاعه بالتوجيه" and msg.reply_to_message_id_ == 0  and DevBot(msg) then 
@@ -6743,7 +6743,7 @@ if text and text:match('^تنظيف (%d+)$') and Constructor(msg) and database:g
 if not database:get(bot_id..'sa:Delete:Time'..msg.chat_id_..':'..msg.sender_user_id_) then           
 local Number = tonumber(text:match('^تنظيف (%d+)$')) 
 if Number > 1000 then 
-send(msg.chat_id_, msg.id_,'⌔ ⍒ لا تستطيع تنضيف اكثر من *~ 1000* رساله') 
+send(msg.chat_id_, msg.id_,'⌔ ⍒ لا تستطيع تنضيف اكثر من *~ 1000* رسالة') 
 return false  
 end  
 local Message = msg.id_
@@ -6751,7 +6751,7 @@ for i=1,tonumber(Number) do
 DeleteMessage(msg.chat_id_,{[0]=Message})
 Message = Message - 1048576
 end
-send(msg.chat_id_, msg.id_,'⌔ ⍒ تم تنظيف *~ '..Number..'* رساله 📩.')  
+send(msg.chat_id_, msg.id_,'⌔ ⍒ تم تنظيف *~ '..Number..'* رسالة 📩.')  
 database:setex(bot_id..'sa:Delete:Time'..msg.chat_id_..':'..msg.sender_user_id_,300,true)
 end
 end
@@ -7473,7 +7473,7 @@ end
 local NUMNKO = (NUMPY * 50)
 database:decrby(bot_id.."Tshak:Add:Num"..msg.chat_id_..msg.sender_user_id_,NUMPY)  
 database:incrby(bot_id.."sa:messageUser"..msg.chat_id_..":"..msg.sender_user_id_,NUMNKO)  
-send(msg.chat_id_,msg.id_,"⌔ ⍒ تم خصم *~ { "..NUMPY.." }* من مجوهراتك \n⌔ ⍒ وتم اضافة* ~ { "..(NUMPY * 50).." } رساله الى رسالك *")
+send(msg.chat_id_,msg.id_,"⌔ ⍒ تم خصم *~ { "..NUMPY.." }* من مجوهراتك \n⌔ ⍒ وتم اضافة* ~ { "..(NUMPY * 50).." } رسالة الى رسالك *")
 end 
 return false 
 end
@@ -8520,7 +8520,7 @@ local keyboard = {
 {'تفعيل الاشتراك 🔭','تعطيل الاشتراك 📠'},
 {'تغير الاشتراك 🔌','حذف رسالة الاشتراك ⌨️'},
 {'الاشتراك الاجباري 🗳️'},
-{'تغير رساله الاشتراك ✉️','تعين قناة الاشتراك ⏳'},
+{'تغير رسالة الاشتراك ✉️','تعين قناة الاشتراك ⏳'},
 {'تحديث السورس ⚙️','تحديث الملفات 🗂️'},
 {'معلومات السيرفر 🗃️'},
 {'جلب نسخه احتياطيه 📁'},
@@ -8576,7 +8576,7 @@ return false
 end 
 if text then    
 send(id_user,msg.id_,text)    
-Text = '⌔ ⍒ تمت ارسال الرساله اليه .. '
+Text = '⌔ ⍒ تمت ارسال الرسالة اليه .. '
 elseif msg.content_.ID == 'MessageSticker' then    
 sendSticker(id_user, msg.id_, msg.content_.sticker_.sticker_.persistent_id_)   
 Text = '⌔ ⍒ تمت ارسال الملصق اليه .. '
@@ -8695,7 +8695,7 @@ send(msg.chat_id_, msg.id_,"⌔ ⍒ الاذاعه معطله من قبل الم
 return false
 end
 database:setex(bot_id.."sa:sa:Bc:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
-send(msg.chat_id_, msg.id_,"⌔ ⍒ ارسل لي سواء ~ { ملصق, متحركة, صورة, رساله }\n⌔ ⍒ للخروج ارسل الغاء ") 
+send(msg.chat_id_, msg.id_,"⌔ ⍒ ارسل لي سواء ~ { ملصق, متحركة, صورة, رسالة }\n⌔ ⍒ للخروج ارسل الغاء ") 
 return false
 end 
 if text=="اذاعة عام 📬" and msg.reply_to_message_id_ == 0 then
@@ -8704,7 +8704,7 @@ send(msg.chat_id_, msg.id_,"⌔ ⍒ الاذاعه معطله من قبل الم
 return false
 end
 database:setex(bot_id.."sa:sa:Bc:Grops" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
-send(msg.chat_id_, msg.id_,"⌔ ⍒ ارسل لي سواء ~ { ملصق, متحركة, صورة, رساله }\n⌔ ⍒ للخروج ارسل الغاء ") 
+send(msg.chat_id_, msg.id_,"⌔ ⍒ ارسل لي سواء ~ { ملصق, متحركة, صورة, رسالة }\n⌔ ⍒ للخروج ارسل الغاء ") 
 return false
 end  
 if text=="اذاعه بالتوجيه 🔀" and msg.reply_to_message_id_ == 0  then
@@ -8792,14 +8792,14 @@ database:setex(bot_id.."add:ch:jm" .. msg.chat_id_ .. "" .. msg.sender_user_id_,
 send(msg.chat_id_, msg.id_, '⌔ ⍒ حسنآ ارسل لي معرف القناة')
 return false  
 end
-if text and text:match("^تغير رساله الاشتراك ✉️$") and Devsa(msg) then  
+if text and text:match("^تغير رسالة الاشتراك ✉️$") and Devsa(msg) then  
 database:setex(bot_id.."textch:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_, 360, true)  
 send(msg.chat_id_, msg.id_, '⌔ ⍒ حسنآ ارسل لي النص الذي تريده')
 return false  
 end
 if text == "حذف رسالة الاشتراك ⌨️" and Devsa(msg) then  
 database:del(bot_id..'text:ch:user')
-send(msg.chat_id_, msg.id_, "⌔ ⍒ تم مـسح رساله الاشتراك ")
+send(msg.chat_id_, msg.id_, "⌔ ⍒ تم مـسح رسالة الاشتراك ")
 return false  
 end
 if text and text:match("^تعين قناة الاشتراك ⏳$") and Devsa(msg) then  
