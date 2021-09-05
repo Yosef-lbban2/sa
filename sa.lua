@@ -7954,7 +7954,7 @@ Text = [[
 
  *. sa source *
 *••┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉••*
- . [sa Channel .](https://www.youtube.com/channel/UCTjdBpWvEdgiorvWSeB3VwA)
+ . [القحطاني .](@SAEED5OBR)
 
  . [The Developer .](https://t.me/SAEED5OBR)
 *••┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉••*
